@@ -14,14 +14,38 @@ class CustomersTable
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable()
-                    ->label('Nama Pelanggan'),
+                    ->weight('bold')
+                    ->icon('heroicon-m-user')
+                    ->label('Pelanggan'),
+
                 TextColumn::make('email')
                     ->searchable()
+                    ->copyable()
+                    ->icon('heroicon-m-envelope')
                     ->label('Email'),
+
+                TextColumn::make('phone')
+                    ->icon('heroicon-m-phone')
+                    ->copyable()
+                    ->label('Telepon'),
+
+                TextColumn::make('address')
+                    ->limit(30)
+                    ->tooltip('Lihat alamat lengkap')
+                    ->icon('heroicon-m-map-pin')
+                    ->label('Alamat'),
+
                 TextColumn::make('joined_date')
-                    ->date()
+                    ->date('d M Y')
                     ->sortable()
-                    ->label('Tgl Bergabung'),
+                    ->icon('heroicon-m-calendar')
+                    ->label('Bergabung'),
+
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Dibuat'),
             ]);
     }
 }

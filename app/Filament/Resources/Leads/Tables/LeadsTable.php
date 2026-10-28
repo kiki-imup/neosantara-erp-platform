@@ -2,10 +2,8 @@
 
 namespace App\Filament\Resources\Leads\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Table;
 
 class LeadsTable
@@ -15,35 +13,42 @@ class LeadsTable
         return $table
             ->columns([
                 TextColumn::make('company_name')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold')
+                    ->icon('heroicon-m-building-office')
+                    ->label('Perusahaan'),
+
                 TextColumn::make('contact_person')
-                    ->searchable(),
+                    ->searchable()
+                    ->icon('heroicon-m-user')
+                    ->label('Kontak'),
+
                 TextColumn::make('phone')
-                    ->searchable(),
+                    ->icon('heroicon-m-phone')
+                    ->copyable()
+                    ->label('Telepon'),
+
                 TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
-                TextColumn::make('status')
-                    ->searchable(),
+                    ->searchable()
+                    ->copyable()
+                    ->icon('heroicon-m-envelope')
+                    ->label('Email'),
+
+                BadgeColumn::make('status')
+                    ->colors([
+                        'primary' => 'Baru',
+                        'warning' => 'Follow Up',
+                        'success' => 'Berhasil',
+                        'danger' => 'Gagal',
+                    ])
+                    ->label('Status'),
+
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime('d M Y')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
-            ])
-            ->recordActions([
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Tanggal Masuk'),
             ]);
     }
 }
