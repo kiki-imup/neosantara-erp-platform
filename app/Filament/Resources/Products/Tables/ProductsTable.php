@@ -5,7 +5,7 @@ namespace App\Filament\Resources\Products\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -42,6 +42,11 @@ class ProductsTable
                     ->money('IDR')
                     ->sortable(),
 
+                ImageColumn::make('image')
+                    ->label('Product Image')
+                    ->disk('public')
+                    ->square(),
+
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime()
@@ -57,7 +62,6 @@ class ProductsTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

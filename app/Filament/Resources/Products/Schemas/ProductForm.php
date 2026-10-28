@@ -26,8 +26,7 @@ class ProductForm
 
                 Textarea::make('description')
                     ->label('Description')
-                    ->rows(4)
-                    ->nullable(),
+                    ->rows(4),
 
                 TextInput::make('stock')
                     ->label('Stock')
@@ -48,7 +47,9 @@ class ProductForm
                     ->label('Product Image')
                     ->image()
                     ->imageEditor()
+                    ->disk('public')
                     ->directory('products')
+                    ->visibility('public')
                     ->nullable(),
             ]);
     }
