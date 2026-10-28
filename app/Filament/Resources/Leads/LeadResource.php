@@ -22,6 +22,10 @@ class LeadResource extends Resource
 
     protected static ?string $navigationLabel = 'Prospek';
 
+    protected static string|\UnitEnum|null $navigationGroup = 'CRM';
+
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return LeadForm::configure($schema);

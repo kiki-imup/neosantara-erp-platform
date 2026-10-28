@@ -22,6 +22,8 @@ class CustomerResource extends Resource
 
     protected static ?string $navigationLabel = 'Pelanggan';
 
+    protected static string|\UnitEnum|null $navigationGroup = 'CRM';
+
     public static function form(Schema $schema): Schema
     {
         return CustomerForm::configure($schema);
