@@ -16,15 +16,19 @@ Platform Enterprise Resource Planning (ERP) terintegrasi untuk PT Neosantara Gro
 
 ### 1. Modul CRM (Prospek Pelanggan)
 *Halaman manajemen prospek dan pelanggan.*
-![Screenshot CRM]([LINK_GAMBAR_1])
+<img width="1917" height="888" alt="Pelanggan" src="https://github.com/user-attachments/assets/11276f8e-121a-4728-955e-35088396ab4d" />
+
+<img width="1912" height="781" alt="Prospek" src="https://github.com/user-attachments/assets/ade5d7c0-83ca-45e2-b772-08f7a38b86d8" />
 
 ### 2. Modul Marketing (Kampanye Pemasaran)
 *Halaman manajemen kampanye dan promo.*
-![Screenshot Marketing]([LINK_GAMBAR_2])
+<img width="1600" height="729" alt="Marketing Campaign" src="https://github.com/user-attachments/assets/6493cce3-e1a7-478a-98b1-ce01178c9112" />
+
 
 ### 3. Modul Inventory (Stok Gudang)
 *Halaman manajemen produk dan supplier.*
-![Screenshot Inventory]([LINK_GAMBAR_3])
+<img width="1600" height="676" alt="Inventory" src="https://github.com/user-attachments/assets/1efcc6fb-20e0-48cd-b3a3-e6bd9ffdf301" />
+
 
 ## 🚀 Cara Menjalankan Project
 1. Clone repository ini: `git clone https://github.com/kiki-imup/neosantara-erp-platform.git`
